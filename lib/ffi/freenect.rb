@@ -146,6 +146,9 @@ module FFI::Freenect
   attach_function :freenect_get_user, [:freenect_device], :pointer
   attach_function :freenect_set_depth_callback, [:freenect_device, :freenect_depth_cb], :void
   attach_function :freenect_set_video_callback, [:freenect_device, :freenect_video_cb], :void  
+  # TODO freenect_set_depth_mode and freenect_set_video_mode both need updated.
+  #      after the change in libfreenect, simply calling the new method does not
+  #      work. The constants for the depth and video formats must have changed.
   attach_function :freenect_set_depth_mode, [:freenect_device, DEPTH_FORMATS], :int
   attach_function :freenect_set_video_mode, [:freenect_device, VIDEO_FORMATS], :int
   attach_function :freenect_set_depth_buffer, [:freenect_device, :pointer], :int
