@@ -1,19 +1,7 @@
-require 'rubygems'
-require 'rake'
+require 'bundler/gem_tasks'
 
 begin
   require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "ffi-libfreenect"
-    gem.summary = gem.description = %Q{FFI bindings for the libfreenect OpenKinect library}
-    gem.homepage = "http://github.com/jgrunzweig/ffi-libfreenect"
-    gem.authors = ["Josh Grunzweig", "Eric Monti"]
-
-    gem.rdoc_options += ["--title", "FFI Freenect", "--main",  "README.rdoc", "--line-numbers"]
-    gem.add_dependency("ffi", ">= 0.5.0")
-
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
   Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
