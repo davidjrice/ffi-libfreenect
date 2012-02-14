@@ -134,7 +134,7 @@ module Freenect
 
     def set_depth_format(fmt)
       l_fmt = fmt.is_a?(Numeric)? fmt : Freenect::DEPTH_FORMATS[fmt]
-      ret = ::FFI::Freenect.freenect_set_depth_format(self.device, l_fmt)
+      ret = ::FFI::Freenect.freenect_set_depth_mode(self.device, l_fmt)
       if (ret== 0)
         init_depth_buffer(fmt)
         @depth_format = fmt
@@ -154,7 +154,7 @@ module Freenect
     #
     def set_video_format(fmt)
       l_fmt = fmt.is_a?(Numeric)? fmt : Freenect::VIDEO_FORMATS[fmt]
-      ret = ::FFI::Freenect.freenect_set_video_format(self.device, l_fmt)
+      ret = ::FFI::Freenect.freenect_set_video_mode(self.device, l_fmt)
       if (ret== 0)
         init_video_buffer(fmt)
         @video_format = fmt
